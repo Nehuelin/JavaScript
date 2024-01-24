@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- EJEMPLO APLICADO: Datos de formulatio usando event -->
+    <form id="formulario">
+        <input type="text">
+        <input type="number">
+        <input type="submit" value="Enviar">
+    </form>
+    <script>
+        let miFormulario = document.getElementById("formulario")
+        miFormulario.addEventListener("submit", validarFormulario)
+
+        function validarFormulario(e) {
+            e.preventDefault // Cancelamos el comportamiento del evento
+            let formulario = e.target // Obtenemos el elemento desde cual se disparo el evento
+            console.log(formulatio.children[0].value); // Primer Hijo --> input type = "text"
+            console.log(formulatio.children[1].value); // Segundo Hijo --> input type = "number"
+        }
+
+    </script>
+</body>
+</html>

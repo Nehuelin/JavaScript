@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // EJEMPLO 1: ALERT CUANDO SE INGRESA UN NOMBRE
+        function solicitarNombre() {
+            let nombre = prompt("Ingresar Nombre");
+            alert("NOMBRE INGRESADO: "+ nombre);
+        }
+
+        solicitarNombre();
+        solicitarNombre();
+        solicitarNombre();
+
+        //EJEMPLO 2: SUMAR Y MOSTRAR RESULTADO
+        let resultado = 0
+
+        function sumar(primerNumero, segundoNumero) {
+            resultado = primerNumero + segundoNumero
+        }
+
+        function mostrar(mensaje) {
+            console.log(mensaje)
+        }
+
+        sumar(6, 3)
+        mostrar(resultado)
+
+        // EJEMPLO 3: CALCULADORA
+        function calculadora(primerNumero, segundoNumero, operacion) {
+            switch (operacion) {
+                case "+":
+                    return primerNumero + segundoNumero;
+                    break;
+                case "-":
+                    return primerNumero - segundoNumero;
+                    break;
+                case "*":
+                    return primerNumero * segundoNumero;
+                    break;
+                case "/": 
+                    return primerNumero / segundoNumero;
+                    break;
+                default:
+                    return 0;
+                    break;
+            }
+        }
+
+        console.log(calculadora(10, 5, "*"))
+
+        // EJEMPLO 4: CALCULAR PRECIO
+        const suma = (a, b) => a + b;
+        const resta = (a, b) => a - b;
+        const iva = x => x * 0.21 // Si una funcion es de una sola linea con valor de retorno y un parametro se puede evitar usar ()
+        
+        let precioProducto = 500
+        let descuento = 50
+        let nuevoPrecio = resta(suma(precioProducto, iva(precioProducto)), descuento)
+        
+        console.log(nuevoPrecio)
+
+    </script>
+</body>
+</html>

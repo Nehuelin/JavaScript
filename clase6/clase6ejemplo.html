@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // EJEMPLO 1: CARGAR ARRAY CON NOMBRES
+        const listaNombres = [];
+        let cantidad = 5;
+        do{
+            let entrada = prompt("Ingresar nombre");
+            listaNombres.push(entrada.toUpperCase());
+            console.log(listaNombres.length);
+        }while(listaNombres.length != cantidad)
+        const nuevaLista = listaNombres.concat(['ANA', 'EMA']);
+        alert(nuevaLista.join("\n"));
+
+        // EJEMPLO 2: FUNCION PARA ELIMINAR CUALQUIER ELEMENTO DE UN ARRAY
+        const nombres = ['Rita', 'Pedro', 'Miguel', 'Ana', 'Vanesa']
+        
+        const eliminar = (nombre) => {
+            let index = nombres.indexOf(nombre)
+            if (index != -1) {
+                nombres.splice(index, 1)
+            }
+        }
+        
+        eliminar('Pedro')
+
+        // EJEMPLO 3: OBJETOS, PRODUCTOS Y ARRAY
+        class Producto {
+            constructor(nombre, precio) {
+                this.nombre = nombre.toUpperCase();
+                this.precio = parseFloat(precio);
+                this.vendido = false;
+            }
+            sumarIva() {
+                this.precio = this.precio * 1.21;
+            }
+        }
+
+        const productos = [];
+        productos.push(new Producto("arroz", "125"));
+        productos.push(new Producto("fideo", "70"));
+        productos.push(new Producto("Pan", "50"));
+
+        for (const producto of productos) {
+            producto.sumarIva();
+        }
+
+    </script>
+</body>
+</html>

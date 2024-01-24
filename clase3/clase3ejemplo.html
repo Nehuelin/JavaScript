@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // EJEMPLOS FOR
+        // EJEMPLO PRACTICO 1: Algoritmo para calcular la tabla de multiplicar de un numero x
+        let ingresarNumero = parseInt(prompt("Ingresar Numero")); // --> Equivale a int(input()) en Python
+        for (let i = 1; i <= 10; i++) {
+            let resultado = ingresarNumero * i;
+            alert(ingresarNumero +" X "+ i +" = "+ resultado);
+        };
+
+        // EJEMPLO PRACTICO 2: Dar turnos a usuarios
+        for (let i = 1; i <= 20; i++) {
+            let ingresarNombre = prompt("Ingresar Nombre")
+            alert("Turno N "+i+" Nombre: "+ingresarNombre);
+        };
+
+        // EJEMPLOS WHILE
+        // EJEMPLO 1: ESC
+        let entrada = prompt("Ingresar un dato");
+        while (entrada != "ESC") {
+            alert("El usuario ingreso "+ entrada);
+        }
+            entrada = prompt("Ingresar otro dato")
+
+        // EJEMPLO 2: Verificar que se ponga un numero (c/ do ... while)
+        let numero = 0;
+        do {
+            numero = prompt("Ingresar numero")
+            console.log(numero)
+        } while (parseInt(numero))
+
+        // EJEMPLO SWITCH
+        // EJEMPLO 1: ESC (c/ while)
+        entrada = prompt("Ingresar un Nombre");
+        while (entrada != "ESC") {
+            switch(entrada) {
+                case "ANA": 
+                    alert("HOLA ANA");
+                    break;
+                case "JUAN":
+                    alert("HOLA JUAN");
+                    break;
+                default:
+                    alert("QUIEN SOS?");
+                    break;
+            }
+            entrada = prompt("Ingresar otro Nombre")    
+        }
+                
+
+    </script>
+</body>
+</html>
+
