@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // EJEMPLO APLICADO 1: ALMACENAR ARRAY DE OBJETOS
+        const productos = [
+            {id: 1, producto: "Arroz", precio: 125},
+            {id: 2, producto: "Fideo", precio: 70},
+            {id: 3, producto: "Pan", precio: 50},
+            {id: 4, producto: "Flan", precio: 100}];
+        const guardarLocal = (clave, valor) => {localStorage.setItem(clave, valor)};
+        // Almacenar producto por producto...
+        for (const producto of productos) {
+            guardarLocal(producto.id, JSON.stringify(producto));
+        }
+        // o almacenar array completo
+        guardarLocal("ListaProductos", JSON.stringify(productos));
+
+        class Producto {
+            constructor(obj) {
+                this.nombre = obj.producto.toUpperCase();
+                this.precio = parseFloat(object.precio);
+
+            }
+            sumarIva() {
+                this.precio = this.precio * 1.21;
+            }
+        }
+
+        const almacenados = JSON.parse(localStorage.getItem("ListaProductos"))
+        const productos2 = [];
+
+        for (const objeto of almacenados) {
+            producto.push(new Producto(objeto));
+        }
+
+        for (const producto of productos2) {
+            producto.sumarIva()
+        }
+
+
+        // EJEMPLO APLICADO 2: RECUPERAR ESTADOS PREVIOS
+        let usuario;
+        let usuarioEnLS = JSON.stringify(localStorage.getItem('usuario'))
+
+        if (usuarioEnLS) {
+            usuario= usuarioEnLS
+        } else {
+            usuario = prompt('Ingrese su nombre de usuario')
+        }
+
+        let carrito = [];
+        let carritoEnLS = JSON.stringify(localStorage.getItem('carrito'))
+
+        if (carritoEnLS) {
+            carrito = carritoEnLS
+        }
+
+        renderCarrito(carrito) // NOTA: funcion no existente que "renderizaria" el carrito
+    
+    </script>
+</body>
+</html>
